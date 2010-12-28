@@ -2,3 +2,8 @@ log/development.log
 log/production.log
 log/server.log
 log/test.log
+public/stylesheets/ie.css
+public/stylesheets/print.css
+public/stylesheets/screen.css
+public/javascripts/.DS_Store
+tmp

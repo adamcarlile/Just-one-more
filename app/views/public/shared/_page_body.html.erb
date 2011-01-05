@@ -1,0 +1,6 @@
+<div class="cms">
+	<%= content_tag(:h1, h(@page.title)) %>
+	<%= content_tag(:p, @page.intro, :id => 'intro') if @page.intro? %>
+	<%= @page.body %>
+	<%= render_tag_list @page %>
+</div>

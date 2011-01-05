@@ -1,0 +1,16 @@
+<%= render :partial => 'layouts/shared/header' %>
+	<div class="wrapper">
+		<header>
+			<h1>just<br />one<br />more</h1>
+		</header>
+		<section id="promo">
+			<%= yield :promotion %>
+		</section>
+		<section id="content">
+			<%= yield %>
+		</section>
+		<section id="support">
+			<%= yield :support %>
+		</section>
+	</div>
+<%= render :partial => 'layouts/shared/footer' %>

@@ -1,0 +1,48 @@
+<script>
+function collapseContainer(selector) {
+	$(selector).slideUp(500, function(){
+		$(this).find('img').hide()
+		$(this).find('div.videoinner').show()
+		$(this).slideDown(500)
+	})
+}
+
+
+	$(document).ready(function(){
+		
+		$('div.videoinner').hide()
+		
+		$('a.video').click(function(e){
+			e.preventDefault()
+			url = $(this).attr('data-url')
+			$('div.videoinner iframe').attr('src', url)
+			collapseContainer('section#promo div.container')
+		})
+		
+	})
+</script>
+<%- content_for :promotion do %>
+	<div class="container">
+		<%= image_tag 'promos/mike_gamble.jpg' %>
+		<div class="videoinner">
+			<iframe src="" width="640" height="360" frameborder="0"></iframe>
+		</div>
+	</div>
+<%- end %>
+
+<%- content_for :support do %>
+<ul>
+	<% @videos[(0..3)].each do |video| %>
+	<li <%= cycle('class="odd"', 'class="even"')%> >
+		<a class="video" href="#" data-url="http://player.vimeo.com/video/<%= video['id'] %>">
+			<%= image_tag video['thumbnail_medium'], :width => '220px' %>
+			<span class="overlay">
+				<%= video['title'] %>
+			</span>
+		</a>
+	</li>
+	<% end %>
+</ul>
+<%- end %>
+
+<%= render 'public/shared/page_body' %>

@@ -1,13 +1,100 @@
-/*
-  Welcome to Compass.
-  In this file you should write your main styles. (or centralize your imports)
-  Import this file using the following HTML or equivalent:
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+@import "compass/reset"
+@import "compass"
+@import "public/vars"
+@import "public/mixins"
 
-@import compass/reset.sass
+body
+	font:
+		family: $body_font
+		size: 10px
+	background:
+		color: #181818
+		image: image_url('backgrounds/black_wood_bg.jpg')
+		repeat: repeat-x
+		
+div.wrapper
+	width: 940px
+	margin: auto
+	@include pie-clearfix
+	background:
+		image: image_url('backgrounds/white_grad.png')
+		repeat: no-repeat
+		position: top
+		
+header
+	display: block
+	padding-top: 30px
+	padding-bottom: 30px
+	
+	h1
+		font:
+			family: $title_font
+			size: 67px
+			weight: bold
+		color: #ffffff
+		letter-spacing: -2px
+		line-height: 50px
+		
+section
+	display: block
+	
+section#promo
+	@include box-shadow(#000000, 0px, 0px, 30px)
+	background-color: #000000
 
-/*
-  The *:focus rule is reset and suppresses link outlining.
-  You _must_ remember to redefine your own outline, as it’s an important accessibility aid. E.g.
-  *:focus
-    outline: #ccc dotted medium
+section#content
+	margin-top: 30px
+	float: left
+	width: 460px
+	
+section#support
+	float: right
+	margin-top: 30px
+	width: 460px
+	@include pie-clearfix
+	
+	ul
+		@include pie-clearfix
+		
+		li
+			float: left
+			margin-bottom: 15px
+			@include box-shadow(#000000, 0px, 0px, 30px)
+			
+			&.odd
+				margin-right: 20px				
+				
+		a
+			position: relative
+			display: block
+			text-decoration: none
+			
+			span.overlay
+				background-color: #000000
+				color: #ffffff
+				font-size: 14px
+				font-weight: bold
+				display: block
+				padding: 5px
+				position: absolute
+				left: 0px
+				bottom: 10px
+
+div.videoinner
+	width: 640px
+	margin: auto
+	border-top: 20px solid #000000
+	border-bottom: 20px solid #000000
+
+div.cms
+	h1
+		@include titlecase(48px, -2px, 35px)
+	
+	p
+		color: #ffffff
+		font:
+			size: 14px
+		line-height: 18px
+		padding:
+			bottom: 10px
+		

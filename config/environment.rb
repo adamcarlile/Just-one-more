@@ -14,7 +14,8 @@ Rails::Initializer.run do |config|
   # Add additional load paths for your own custom dirs
   # config.load_paths += %W( #{RAILS_ROOT}/extras )
 
-  config.gem "compass", :version => "0.8.17"
+  config.gem "compass"
+  config.gem "vimeo"
   eval(File.read("#{RAILS_ROOT}/vendor/plugins/cms-engine/config/environment.rb"))
   
   # Only load the plugins named here, in the order given (default is alphabetical).

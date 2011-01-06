@@ -9,6 +9,7 @@ function collapseContainer(selector) {
 
 
 	$(document).ready(function(){
+		$("a.video img").tipTip();
 		
 		$('div.videoinner').hide()
 		
@@ -31,11 +32,11 @@ function collapseContainer(selector) {
 <%- end %>
 
 <%- content_for :support do %>
-<ul>
+<ul id="videos">
 	<% @videos[(0..3)].each do |video| %>
 	<li <%= cycle('class="odd"', 'class="even"')%> >
 		<a class="video" href="#" data-url="http://player.vimeo.com/video/<%= video['id'] %>">
-			<%= image_tag video['thumbnail_medium'], :width => '220px' %>
+			<%= image_tag video['thumbnail_medium'], :width => '220px', :title => strip_tags(video['description']) %>
 			<span class="overlay">
 				<%= video['title'] %>
 			</span>

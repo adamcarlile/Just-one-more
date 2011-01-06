@@ -3,6 +3,12 @@
 @import "public/vars"
 @import "public/mixins"
 
+a
+	color: #d53434
+	
+a:hover
+	color: #ff2525
+
 body
 	font:
 		family: $body_font
@@ -15,6 +21,7 @@ body
 div.wrapper
 	width: 940px
 	margin: auto
+	margin-bottom: 20px
 	@include pie-clearfix
 	background:
 		image: image_url('backgrounds/white_grad.png')
@@ -53,7 +60,17 @@ section#support
 	width: 460px
 	@include pie-clearfix
 	
-	ul
+	ul#socialmedia
+		@include pie-clearfix
+		li
+			float: left
+			width: 138px
+			margin-right: 20px
+			
+			&.last
+				margin-right: 0px
+	
+	ul#videos
 		@include pie-clearfix
 		
 		li
@@ -98,3 +115,19 @@ div.cms
 		padding:
 			bottom: 10px
 		
+footer
+	padding-top: 20px
+	display: block
+	width: 940px
+	margin: auto
+	border-top: 1px solid #a02b2b
+	margin-bottom: 20px
+	
+	p
+		color: #ffffff
+		font-size: 11px
+		padding-top: 2px
+		padding-bottom: 2px
+		
+		&.website
+			float: right
